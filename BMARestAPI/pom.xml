@@ -54,7 +54,7 @@
 				  <archive>
 				    <manifest>
 					<addClasspath>true</addClasspath>
-					<mainClass>th.co.ipassion.bkkegp.DemoFeedApplication</mainClass>
+					<mainClass>th.co.ipassion.bkkegp.Application</mainClass>
 					<classpathPrefix>dependency-jars/</classpathPrefix>
 				    </manifest>
 				  </archive>
