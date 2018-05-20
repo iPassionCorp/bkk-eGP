@@ -20,7 +20,7 @@ public class Application {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/listBkkEgp")
-                	.allowedOrigins("http://demo.ipassion.co.th")
+                	.allowedOrigins("*")
                 	//.allowCredentials(false)
                     .maxAge(3600);
             }
