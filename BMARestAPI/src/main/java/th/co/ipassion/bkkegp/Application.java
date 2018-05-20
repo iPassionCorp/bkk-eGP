@@ -19,10 +19,9 @@ public class Application {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/listBkkEgp")
-                	.allowedOrigins("*")
-                	.allowedHeaders("*")
-                	.allowCredentials(true)
+                registry.addMapping("/listBkkEgp/**")
+                	.allowedOrigins("http://demo.ipassion.co.th")
+                	//.allowCredentials(false)
                     .maxAge(3600);
             }
         };

@@ -15,7 +15,7 @@ import th.co.ipassion.bkkegp.model.RssEgp;
 public class BkkEgpController {  
 
     @RequestMapping("/listBkkEgp")
-    @CrossOrigin(origins = "*", maxAge = 3600)
+    @CrossOrigin(origins = "http://demo.ipassion.co.th", maxAge = 3600)
     public List<RssEgp> listBkkEgp(@RequestParam(value="deptId", defaultValue="3100001") String deptId) {
     	RssEgpDao service = new RssEgpDao();
     	List<RssEgp> result = null;
