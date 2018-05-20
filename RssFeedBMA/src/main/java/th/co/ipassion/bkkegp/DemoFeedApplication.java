@@ -33,7 +33,7 @@ public class DemoFeedApplication {
                     cal.setTime(publishedDate);
                     rss.setPublish_date(new java.sql.Date(cal.getTime().getTime()));                    
                     
-                    rss.setDeptid("3100001");
+                    rss.setDeptid(BMAConstant.DEPTID_BKK);
                     rss.setDeptsubid("*");
                     rss.setAnouncetype("D0");
                     rss.setMethodid("*");
