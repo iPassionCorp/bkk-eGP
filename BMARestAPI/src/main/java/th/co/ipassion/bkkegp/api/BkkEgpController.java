@@ -2,6 +2,7 @@ package th.co.ipassion.bkkegp.api;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import th.co.ipassion.bkkegp.model.RssEgp;
 public class BkkEgpController {
 
     @RequestMapping("/listBkkEgp")
+    @CrossOrigin(origins = "*")
     public List<RssEgp> listBkkEgp(@RequestParam(value="deptId", defaultValue="3100001") String deptId) {
     	RssEgpDao service = new RssEgpDao();
     	List<RssEgp> result = null;
