@@ -12,7 +12,7 @@ import th.co.ipassion.bkkegp.dao.RssEgpDao;
 import th.co.ipassion.bkkegp.model.RssEgp;
 
 @RestController
-public class BkkEgpController {
+public class BkkEgpController {  
 
     @RequestMapping("/listBkkEgp")
     @CrossOrigin(origins = "http://demo.ipassion.co.th", maxAge=3600)
@@ -21,6 +21,7 @@ public class BkkEgpController {
     	List<RssEgp> result = null;
     	
     	try {
+    		
     		if (deptId.equalsIgnoreCase("3100001") || deptId.equalsIgnoreCase("*")) {
     			result = service.getAllEgpInfo();
     		} else {
