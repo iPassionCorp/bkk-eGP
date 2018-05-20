@@ -22,7 +22,7 @@ public class Application {
                 registry.addMapping("/listBkkEgp")
                 	.allowedOrigins("*")
                 	.allowedHeaders("*")
-                	.allowCredentials(false)
+                	.allowCredentials(true)
                     .maxAge(3600);
             }
         };
