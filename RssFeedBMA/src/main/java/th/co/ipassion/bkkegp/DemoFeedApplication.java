@@ -23,7 +23,6 @@ public class DemoFeedApplication {
                 if (message != null){
                     SyndEntry entry = (SyndEntry)message.getPayload();
                     System.out.println(entry.getPublishedDate() + " - " + entry.getTitle());
-                    System.out.println(entry.getLink());
                     
                     RssEgp rss = new RssEgp();
                     rss.setTitle(entry.getTitle());
@@ -34,12 +33,13 @@ public class DemoFeedApplication {
                     cal.setTime(publishedDate);
                     rss.setPublish_date(new java.sql.Date(cal.getTime().getTime()));                    
                     
-                    System.out.println("Start Saving this record into Database...");
-                    
+                    rss.setDeptid("3100001");
+                    rss.setDeptsubid("*");
+                    rss.setAnouncetype("D0");
+                    rss.setMethodid("*");
+                                        
                     RssEgpDao service = new RssEgpDao();
-                    service.create(rss); 
-                    
-                    System.out.println("Finish Saved this record into Database");
+                    service.create(rss);                   
                 }
                 else {
                     break;

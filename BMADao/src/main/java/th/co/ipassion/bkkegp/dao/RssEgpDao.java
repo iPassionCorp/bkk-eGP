@@ -18,10 +18,15 @@ public class RssEgpDao {
 		PreparedStatement ps = null;
 		try {
 			c = ConnectionHelper.getConnection();
-			ps = c.prepareStatement("INSERT INTO poc.rssegp VALUES (nextval('poc.rssegp_seq'), ?, ?, ?)");
+			ps = c.prepareStatement("INSERT INTO poc.rssegp VALUES (nextval('poc.rssegp_seq'), ?, ?, ?, ?, ?, ?, ?)");
 			ps.setDate(1, rssEgp.getPublish_date());
 			ps.setString(2, rssEgp.getTitle());
-			ps.setString(3, rssEgp.getEgp_url());
+			ps.setString(3, rssEgp.getEgp_url());			
+			ps.setString(4, rssEgp.getDeptid());
+			ps.setString(5, rssEgp.getDeptsubid());
+			ps.setString(6, rssEgp.getAnouncetype());
+			ps.setString(7, rssEgp.getMethodid());
+			
 			ps.executeUpdate();
 
 		} catch (Exception e) {
@@ -75,7 +80,8 @@ public class RssEgpDao {
 			ResultSet rs = s.executeQuery("SELECT * FROM poc.rssegp ORDER BY publish_date DESC");
 
 			while (rs.next()) {
-				list.add(new RssEgp(rs.getLong(1), rs.getDate(2), rs.getString(3), rs.getString(4)));
+				list.add(new RssEgp(rs.getLong(1), rs.getDate(2), rs.getString(3), rs.getString(4),
+									rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -6,7 +6,11 @@ CREATE TABLE poc.rssegp (
   id              	BIGSERIAL PRIMARY KEY,
   publish_date      DATE NOT NULL,
   title  			TEXT NOT NULL,
-  egp_url			TEXT NOT NULL
+  egp_url			TEXT NOT NULL,
+  deptid			TEXT NOT NULL,
+  deptsubid			TEXT NOT NULL,
+  anouncetype		TEXT NOT NULL,
+  methodid			TEXT NOT NULL
 );
 
 CREATE SEQUENCE poc.rssegp_seq
