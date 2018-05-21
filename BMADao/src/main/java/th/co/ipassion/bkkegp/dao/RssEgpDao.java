@@ -12,7 +12,6 @@ import th.co.ipassion.bkkegp.ConnectionHelper;
 import th.co.ipassion.bkkegp.model.RssEgp;
 
 public class RssEgpDao {
-
 	public RssEgp create(RssEgp rssEgp) throws DAOException {
 		Connection c = null;
 		PreparedStatement ps = null;

@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import th.co.ipassion.bkkegp.dao.AnnounceTypeDao;
 import th.co.ipassion.bkkegp.dao.DAOException;
+import th.co.ipassion.bkkegp.dao.MethodIDTypeDao;
 import th.co.ipassion.bkkegp.dao.RssEgpDao;
+import th.co.ipassion.bkkegp.model.MapValue;
 import th.co.ipassion.bkkegp.model.RssEgp;
 
 @RestController
@@ -19,19 +22,40 @@ public class BkkEgpController {
     public List<RssEgp> listBkkEgp(@RequestParam(value="deptId", defaultValue="3100001") String deptId) {
     	RssEgpDao service = new RssEgpDao();
     	List<RssEgp> result = null;
-    	
-    	try {
-    		
+    	try { 
     		if (deptId.equalsIgnoreCase("3100001") || deptId.equalsIgnoreCase("*")) {
     			result = service.getAllEgpInfo();
     		} else {
     			result = service.getEgpInfoBySubDeptCodeId(deptId);
     		}
-    		    		
-		} catch (DAOException e) {
-			e.printStackTrace();
-		}
-    	
+    	} catch (DAOException e) { e.printStackTrace(); }
+    	return result;
+    }
+    
+
+    @RequestMapping("/listAnnounce")
+    @CrossOrigin(origins = "*", maxAge = 3600)
+    public List<MapValue> getListAnnounce() {
+    	AnnounceTypeDao service = new AnnounceTypeDao();
+    	List<MapValue> result = null;
+    	try { 
+    		result = service.getDataAll();
+    	} catch (DAOException e) {
+    		e.printStackTrace(); 
+    	}
+    	return result;
+    }
+    
+    @RequestMapping("/listMethodId")
+    @CrossOrigin(origins = "*", maxAge = 3600)
+    public List<MapValue> getListMethodId() {
+    	MethodIDTypeDao service = new MethodIDTypeDao();
+    	List<MapValue> result = null;
+    	try { 
+    		result = service.getDataAll();
+    	} catch (DAOException e) {
+    		e.printStackTrace(); 
+    	}
     	return result;
     }
 }
