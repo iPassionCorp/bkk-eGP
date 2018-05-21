@@ -14,10 +14,15 @@ import th.co.ipassion.bkkegp.model.RssEgp;
 
 public class DemoFeedApplication {
     public static void main(String[] args) throws InterruptedException, DAOException {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "rss-egp-bkk.xml");
+    	DemoFeedApplication demo = new DemoFeedApplication();
+    	demo.feed("rss-egp-bkk.xml", "articleChannel", "*", "D0", "*");   	
+    	//demo.feed("rss-egp-bkk-demo.xml", "demoChannel", "*", "P0", "16");
+    }
+    
+    public void feed (String xmlFileName, String channel, String deptSubId, String announceType, String methodId) throws InterruptedException, DAOException {   	
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(xmlFileName);
         try {
-           PollableChannel feedChannel = context.getBean("articleChannel", PollableChannel.class);
+           PollableChannel feedChannel = context.getBean(channel, PollableChannel.class);
             for (int i = 0; i < 20; i++) {
                 Message message = (Message) feedChannel.receive(10000);
                 if (message != null){
@@ -34,9 +39,9 @@ public class DemoFeedApplication {
                     rss.setPublish_date(new java.sql.Date(cal.getTime().getTime()));                    
                     
                     rss.setDeptid(BMAConstant.DEPTID_BKK);
-                    rss.setDeptsubid("*");
-                    rss.setAnouncetype("D0");
-                    rss.setMethodid("*");
+                    rss.setDeptsubid(deptSubId);
+                    rss.setAnouncetype(announceType);
+                    rss.setMethodid(methodId);
                                         
                     RssEgpDao service = new RssEgpDao();
                     service.create(rss);                   
@@ -49,4 +54,5 @@ public class DemoFeedApplication {
             context.close();
         }
     }
+    
 }
