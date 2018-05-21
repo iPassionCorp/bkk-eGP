@@ -22,9 +22,9 @@ public class Application {
                 registry.addMapping("/listBkkEgp").allowedOrigins("*")
                 	//.allowCredentials(false)
                     .maxAge(3600);
-                registry.addMapping("/listAnnounce").allowedOrigins("*").maxAge(3600);;
-                registry.addMapping("/listMethodId").allowedOrigins("*").maxAge(3600);;
-                registry.addMapping("/testJson").allowedOrigins("*").maxAge(3600);;
+                registry.addMapping("/listAnnounce").allowedOrigins("*").maxAge(3600);
+                registry.addMapping("/listMethodId").allowedOrigins("*").maxAge(3600);
+                registry.addMapping("/testJson").allowedOrigins("*").maxAge(3600);
             }
         };
     }
