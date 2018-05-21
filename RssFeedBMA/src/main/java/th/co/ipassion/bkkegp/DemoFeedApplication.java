@@ -16,7 +16,7 @@ public class DemoFeedApplication {
     public static void main(String[] args) throws InterruptedException, DAOException {
     	DemoFeedApplication demo = new DemoFeedApplication();
     	demo.feed("rss-egp-bkk.xml", "articleChannel", "*", "D0", "*");   	
-    	//demo.feed("rss-egp-bkk-demo.xml", "demoChannel", "*", "P0", "16");
+    	demo.feed("rss-egp-bkk-demo.xml", "demoChannel", "*", "P0", "16");
     }
     
     public void feed (String xmlFileName, String channel, String deptSubId, String announceType, String methodId) throws InterruptedException, DAOException {   	
