@@ -117,4 +117,32 @@ public class RssEgpDao {
 		return list;
 	}	
 	
+	public List<RssEgp> getEgpInfoByCondition(String subDeptCodeId, String announceType, String methodId) throws DAOException {
+		List<RssEgp> list = new ArrayList<RssEgp>();
+		Connection c = null;
+		StringBuffer sql = new StringBuffer("SELECT * FROM poc.rssegp WHERE 1=1 ");
+		try {
+			c = ConnectionHelper.getConnection();
+			Statement s = c.createStatement();
+			
+			sql.append(" AND deptsubid = '" + subDeptCodeId + "' ");
+			sql.append(" AND announcetype = '" + announceType + "' ");
+			sql.append(" AND methodid = '" + methodId + "' ");
+			sql.append(" ORDER BY publish_date DESC");
+			
+			ResultSet rs = s.executeQuery(sql.toString());
+
+			while (rs.next()) {
+				list.add(new RssEgp(rs.getLong(1), rs.getDate(2), rs.getString(3), rs.getString(4),
+									rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException(e);
+		} finally {
+			ConnectionHelper.close(c);
+		}
+		return list;
+	}
+	
 }
