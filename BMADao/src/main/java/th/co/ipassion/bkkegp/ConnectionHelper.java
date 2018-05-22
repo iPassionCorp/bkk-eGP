@@ -1,8 +1,10 @@
 package th.co.ipassion.bkkegp;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionHelper {
 
@@ -13,12 +15,25 @@ public class ConnectionHelper {
 
 	private ConnectionHelper() {
 		try {
-			Class.forName("org.postgresql.Driver");
-			url = "jdbc:postgresql://bkkegp.c1omez2fbnnj.ap-southeast-1.rds.amazonaws.com:5432/bkkegp";
-			username = "postgres";
-			password = "postgres";
+			Properties prop = getProperties("config.properties");
+			Class.forName(prop.getProperty("db.driver"));
+			url = prop.getProperty("db.url")+":"+prop.getProperty("db.port")+'/'+prop.getProperty("db.schema");
+			username = prop.getProperty("db.username");
+			password = prop.getProperty("db.password");
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	@SuppressWarnings("finally")
+	private Properties getProperties(String propFileName) throws IOException {
+		Properties prop = new Properties();
+		try {
+			prop.load(getClass().getClassLoader().getResourceAsStream(propFileName));
+		} catch (Exception e) {
+			System.out.println("Exception: " + e);
+		} finally {
+			return prop;
 		}
 	}
 
