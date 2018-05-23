@@ -17,7 +17,8 @@ public class RssEgpDao {
 		PreparedStatement ps = null;
 		try {
 			c = ConnectionHelper.getConnection();
-			ps = c.prepareStatement("INSERT INTO poc.rssegp VALUES (nextval('poc.rssegp_seq'), ?, ?, ?, ?, ?, ?, ?)");
+			ps = c.prepareStatement("INSERT INTO poc.rssegp VALUES (nextval('poc.rssegp_seq'), ?, ?, ?, ?, ?, ?, ?) "
+					+ "ON CONFLICT ON CONSTRAINT rssegp_unique1 DO NOTHING");
 			ps.setDate(1, rssEgp.getPublish_date());
 			ps.setString(2, rssEgp.getTitle());
 			ps.setString(3, rssEgp.getEgp_url());			
@@ -76,7 +77,8 @@ public class RssEgpDao {
 		try {
 			c = ConnectionHelper.getConnection();
 			Statement s = c.createStatement();
-			ResultSet rs = s.executeQuery("SELECT * FROM poc.rssegp ORDER BY publish_date DESC");
+			ResultSet rs = s.executeQuery("SELECT distinct row_number() over (ORDER BY publish_date) as id, publish_date, "
+					+ "title, egp_url, deptid, deptsubid, anouncetype, methodid FROM poc.rssegp ORDER BY publish_date DESC");
 
 			while (rs.next()) {
 				list.add(new RssEgp(rs.getLong(1), rs.getDate(2), rs.getString(3), rs.getString(4),
@@ -94,7 +96,8 @@ public class RssEgpDao {
 	public List<RssEgp> getEgpInfoBySubDeptCodeId(String subDeptCodeId) throws DAOException {
 		List<RssEgp> list = new ArrayList<RssEgp>();
 		Connection c = null;
-		StringBuffer sql = new StringBuffer("SELECT * FROM poc.rssegp WHERE 1=1 ");
+		StringBuffer sql = new StringBuffer("SELECT distinct row_number() over (ORDER BY publish_date) as id, "
+				+ "publish_date, title, egp_url, deptid, deptsubid, anouncetype, methodid FROM poc.rssegp WHERE 1=1 ");
 		try {
 			c = ConnectionHelper.getConnection();
 			Statement s = c.createStatement();
@@ -120,7 +123,8 @@ public class RssEgpDao {
 	public List<RssEgp> getEgpInfoByCondition(String subDeptCodeId, String announceType, String methodId) throws DAOException {
 		List<RssEgp> list = new ArrayList<RssEgp>();
 		Connection c = null;
-		StringBuffer sql = new StringBuffer("SELECT * FROM poc.rssegp WHERE 1=1 ");
+		StringBuffer sql = new StringBuffer("SELECT distinct row_number() over (ORDER BY publish_date) as id, publish_date, "
+				+ "title, egp_url, deptid, deptsubid, anouncetype, methodid FROM poc.rssegp WHERE 1=1 ");
 		try {
 			c = ConnectionHelper.getConnection();
 			Statement s = c.createStatement();
