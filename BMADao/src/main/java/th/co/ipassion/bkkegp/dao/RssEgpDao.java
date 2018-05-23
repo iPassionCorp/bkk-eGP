@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import th.co.ipassion.bkkegp.BMAConstant;
 import th.co.ipassion.bkkegp.ConnectionHelper;
 import th.co.ipassion.bkkegp.model.RssEgp;
 
@@ -129,8 +130,17 @@ public class RssEgpDao {
 			c = ConnectionHelper.getConnection();
 			Statement s = c.createStatement();
 			
-			sql.append(" AND deptsubid = '" + subDeptCodeId + "' ");
+			if (subDeptCodeId.equalsIgnoreCase(BMAConstant.DEPTID_BKK)) {
+				sql.append(" AND deptid = '" + subDeptCodeId + "' ");
+			} else {
+				sql.append(" AND deptsubid = '" + subDeptCodeId + "' ");
+			}
+			
+			if ("*".equalsIgnoreCase(announceType)) {	
+				announceType = BMAConstant.DEFAULT_ANNOUNCE_TYPE;
+			}
 			sql.append(" AND anouncetype = '" + announceType + "' ");
+			
 			if (!"*".equalsIgnoreCase(methodId)) {
 				sql.append(" AND methodid = '" + methodId + "' ");
 			}

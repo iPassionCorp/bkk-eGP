@@ -38,10 +38,6 @@ public class BkkEgpController {
     			
     		} else {
     			
-    			if ("*".equalsIgnoreCase(announceType)) {	
-    				announceType = BMAConstant.DEFAULT_ANNOUNCE_TYPE;
-    			}
-    			
     			result = service.getEgpInfoByCondition(deptId, announceType, methodId);
     			
     		}
