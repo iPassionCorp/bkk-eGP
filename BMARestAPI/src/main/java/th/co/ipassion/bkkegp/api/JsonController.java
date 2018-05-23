@@ -14,13 +14,11 @@ public class JsonController {
 	@CrossOrigin(origins = "*", maxAge = 3600)
 	public DataJson testJson(
 			@RequestParam(value = "deptId", defaultValue = "3100001") String deptId,
-			@RequestBody DataJson input) 
-	{
+			@RequestParam(value = "param1", defaultValue = "pamram1")  String param1,
+			@RequestBody DataJson input) {
 		DataJson output = new DataJson();
-		System.out.println("deptId : " + deptId + " | input.getKey() : " + input.getKey());
-		System.out.println("input.getValue() : " + input.getValue());
 		output.setKey("deptId : " + deptId + " | key : " + input.getKey());
-		output.setValue("value_json : " + input.getValue());
+		output.setValue("param1 : " + param1 + " | value_json : " + input.getValue());
 		return output;
 	}
 }
