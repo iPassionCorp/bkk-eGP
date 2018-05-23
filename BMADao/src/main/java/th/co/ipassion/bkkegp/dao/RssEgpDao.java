@@ -130,7 +130,7 @@ public class RssEgpDao {
 			Statement s = c.createStatement();
 			
 			sql.append(" AND deptsubid = '" + subDeptCodeId + "' ");
-			sql.append(" AND announcetype = '" + announceType + "' ");
+			sql.append(" AND anouncetype = '" + announceType + "' ");
 			if (!"*".equalsIgnoreCase(methodId)) {
 				sql.append(" AND methodid = '" + methodId + "' ");
 			}
