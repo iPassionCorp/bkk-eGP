@@ -136,14 +136,14 @@ public class RssEgpDao {
 				sql.append(" AND deptsubid = '" + subDeptCodeId + "' ");
 			}
 			
-			if ("*".equalsIgnoreCase(announceType)) {	
-				announceType = BMAConstant.DEFAULT_ANNOUNCE_TYPE;
-			}
-			sql.append(" AND anouncetype = '" + announceType + "' ");
+			if (!"*".equalsIgnoreCase(announceType)) {	
+				sql.append(" AND anouncetype = '" + announceType + "' ");
+			}			
 			
 			if (!"*".equalsIgnoreCase(methodId)) {
 				sql.append(" AND methodid = '" + methodId + "' ");
 			}
+			
 			sql.append(" ORDER BY publish_date DESC");
 			
 			System.out.println("SQL: " + sql.toString());
