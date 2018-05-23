@@ -3,15 +3,20 @@ DROP SCHEMA IF EXISTS poc CASCADE;
 CREATE SCHEMA poc;
 
 CREATE TABLE poc.rssegp (
-  id              	BIGSERIAL PRIMARY KEY,
-  publish_date      DATE NOT NULL,
-  title  			TEXT NOT NULL,
-  egp_url			TEXT NOT NULL,
-  deptid			TEXT NOT NULL,
-  deptsubid			TEXT NOT NULL,
-  anouncetype		TEXT NOT NULL,
-  methodid			TEXT NOT NULL
-);
+	id bigserial NOT NULL,
+	publish_date date NOT NULL,
+	title text NOT NULL,
+	egp_url text NOT NULL,
+	deptid text NOT NULL,
+	deptsubid text NOT NULL,
+	anouncetype text NOT NULL,
+	methodid text NOT NULL,
+	CONSTRAINT rssegp_pkey PRIMARY KEY (id),
+	CONSTRAINT rssegp_unique1 UNIQUE (title, publish_date)
+)
+WITH (
+	OIDS=FALSE
+) ;
 
 CREATE SEQUENCE poc.rssegp_seq
   start 1 increment 1;
