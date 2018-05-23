@@ -84,7 +84,7 @@
 					<configuration>
 					  <!-- exclude junit, we need runtime dependency only -->
 					  <includeScope>runtime</includeScope>
-					  <outputDirectory>$h{project.build.directory}/dependency-jars/</outputDirectory>
+					  <outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
 					</configuration>
 				  </execution>
 				</executions>
