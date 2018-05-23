@@ -131,7 +131,9 @@ public class RssEgpDao {
 			
 			sql.append(" AND deptsubid = '" + subDeptCodeId + "' ");
 			sql.append(" AND announcetype = '" + announceType + "' ");
-			sql.append(" AND methodid = '" + methodId + "' ");
+			if (!"*".equalsIgnoreCase(methodId)) {
+				sql.append(" AND methodid = '" + methodId + "' ");
+			}
 			sql.append(" ORDER BY publish_date DESC");
 			
 			ResultSet rs = s.executeQuery(sql.toString());
