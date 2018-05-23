@@ -136,6 +136,8 @@ public class RssEgpDao {
 			}
 			sql.append(" ORDER BY publish_date DESC");
 			
+			System.out.println("SQL: " + sql.toString());
+			
 			ResultSet rs = s.executeQuery(sql.toString());
 
 			while (rs.next()) {
