@@ -28,6 +28,7 @@ public class DemoFeedApplication {
 		String keyElement = "int-feed:inbound-channel-adapter";
 		// demo.feed("rss-egp-bkk.xml", "articleChannel", "*", "D0", "*");
 		// demo.feed("rss-egp-bkk-demo.xml", "demoChannel", "*", "P0", "16");
+<<<<<<< HEAD
 		demo.feed_v2(fileName, keyElement);
 	}
 
@@ -45,6 +46,25 @@ public class DemoFeedApplication {
 		} catch (Exception ex) {
 			System.out.println("error");
 			ex.printStackTrace();
+=======
+		// demo.feed("rss-egp-bkk-demo.xml", "demoChannel", "*", "P0", "16");
+		demo.feed_v2(fileName, keyElement);
+	}
+
+	private Document loadTestDocument(String url) throws Exception {
+		Document ret = null;
+		DocumentBuilderFactory domFactory;
+		DocumentBuilder builder;
+		try {
+			domFactory = DocumentBuilderFactory.newInstance();
+			domFactory.setValidating(false);
+			domFactory.setNamespaceAware(false);
+			builder = domFactory.newDocumentBuilder();
+			InputStream in = new URL(url).openStream();
+			ret = builder.parse(in);
+		} catch (Exception ex) {
+			System.out.println("error");
+>>>>>>> branch 'master' of https://github.com/iPassionCorp/bkk-eGP.git
 		}
 		return ret;
 	}
