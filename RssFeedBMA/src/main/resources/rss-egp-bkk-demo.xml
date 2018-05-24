@@ -5,12 +5,654 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
             http://www.springframework.org/schema/integration/feed http://www.springframework.org/schema/integration/feed/spring-integration-feed.xsd">
-    <int-feed:inbound-channel-adapter id="feedAdapter"
+    <int-feed:inbound-channel-adapter id="feedAdapter1"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter2"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter3"
         channel="demoChannel" auto-startup="true"
         url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=16">
         <int:poller fixed-rate="10000" max-messages-per-poll="100" />
     </int-feed:inbound-channel-adapter>
  
+     <int-feed:inbound-channel-adapter id="feedAdapter4"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter5"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter6"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter7"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter8"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter9"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter10"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter11"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter12"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=P0&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+    <int-feed:inbound-channel-adapter id="feedAdapter13"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter14"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter15"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter16"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter17"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter18"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter19"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter20"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter21"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter22"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter23"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter24"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=15&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter25"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter26"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter27"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter28"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter29"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter30"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter31"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter32"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter33"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter34"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter35"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter36"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=B0&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter37"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter38"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter39"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter40"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter41"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter42"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter43"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter44"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter45"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter46"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter47"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter48"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D0&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter49"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter50"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter51"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter52"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter53"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter54"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter55"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter56"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter57"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	<int-feed:inbound-channel-adapter id="feedAdapter58"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter59"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter60"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W0&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter61"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter62"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter63"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter64"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter65"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter66"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter67"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter68"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter69"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter70"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter71"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter72"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D1&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter73"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter74"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter75"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter76"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter77"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter78"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter79"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter80"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter81"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter82"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter83"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter84"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W1&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter85"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter86"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter87"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter88"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter89"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter90"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter91"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter92"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter93"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter94"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter95"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter96"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=D2&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter97"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=02">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter98"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=15">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter99"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=16">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+ 
+     <int-feed:inbound-channel-adapter id="feedAdapter100"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=18">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter101"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=19">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter102"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=20">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter103"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=21">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter104"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=22">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter105"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=23">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+	
+	    <int-feed:inbound-channel-adapter id="feedAdapter106"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=24">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
+    <int-feed:inbound-channel-adapter id="feedAdapter107"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=25">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+    
+    <int-feed:inbound-channel-adapter id="feedAdapter108"
+        channel="demoChannel" auto-startup="true"
+        url="http://process3.gprocurement.go.th/EPROCRssFeedWeb/egpannouncerss.xml?deptId=3100001&amp;anounceType=W2&amp;methodId=26">
+        <int:poller fixed-rate="10000" max-messages-per-poll="100" />
+    </int-feed:inbound-channel-adapter>
+
     <int:channel id="demoChannel">
         <int:priority-queue/>
     </int:channel>
